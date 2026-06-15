@@ -4,6 +4,8 @@
   --ivory: #fff8ef;
   --paper: #fbf4ec;
   --cream: #f5eadc;
+  --services-bg: #efe0cf;
+  --contact-bg: #edf2ec;
   --line: #e5d4c0;
   --gold: #e9bd67;
   --gold-light: #f7db93;
@@ -313,7 +315,9 @@ section[id] {
 }
 
 .services {
-  background: var(--paper);
+  background: var(--services-bg);
+  border-top: 1px solid rgba(198, 95, 84, 0.08);
+  border-bottom: 1px solid rgba(198, 95, 84, 0.1);
 }
 
 .service-grid {
@@ -335,8 +339,8 @@ section[id] {
 .service-card {
   min-height: 420px;
   padding: clamp(24px, 3vw, 34px);
-  background: var(--ivory);
-  border: 1px solid rgba(229, 212, 192, 0.82);
+  background: #fffaf3;
+  border: 1px solid rgba(205, 181, 153, 0.9);
 }
 
 .service-card-dark {
@@ -357,7 +361,7 @@ section[id] {
 
 .service-card p,
 .service-card li {
-  color: var(--muted);
+  color: #5d5049;
 }
 
 .service-card-dark p,
@@ -816,7 +820,8 @@ section[id] {
 }
 
 .contact {
-  background: var(--ivory);
+  background: var(--contact-bg);
+  border-top: 1px solid rgba(12, 89, 96, 0.08);
 }
 
 .contact-grid {
@@ -826,8 +831,8 @@ section[id] {
 .contact-panel {
   display: grid;
   overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(229, 212, 192, 0.82);
+  background: #fffaf3;
+  border: 1px solid rgba(186, 205, 189, 0.92);
 }
 
 .contact-panel a {
@@ -857,8 +862,8 @@ section[id] {
   gap: 16px;
   padding: clamp(22px, 4vw, 32px);
   border-radius: var(--radius);
-  background: #fff;
-  border: 1px solid rgba(229, 212, 192, 0.82);
+  background: #fffaf3;
+  border: 1px solid rgba(186, 205, 189, 0.92);
   box-shadow: var(--shadow);
 }
 
@@ -885,10 +890,10 @@ section[id] {
   width: 100%;
   min-height: 46px;
   padding: 12px 13px;
-  border: 1px solid var(--line);
+  border: 1px solid #d8c5ae;
   border-radius: var(--radius);
   color: var(--ink);
-  background: var(--ivory);
+  background: #fff8ef;
   font: 500 1rem Arial, Helvetica, sans-serif;
   letter-spacing: 0;
   text-transform: none;
