@@ -819,6 +819,183 @@ section[id] {
   object-fit: cover;
 }
 
+.testimonials {
+  background: var(--cream);
+  border-top: 1px solid rgba(198, 95, 84, 0.08);
+  border-bottom: 1px solid rgba(12, 89, 96, 0.08);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.testimonial-card {
+  position: relative;
+  min-height: 230px;
+  display: grid;
+  align-content: space-between;
+  gap: 28px;
+  padding: clamp(30px, 3vw, 38px) clamp(24px, 3vw, 32px) clamp(26px, 3vw, 32px);
+  border-radius: var(--radius);
+  background: #fffaf3;
+  border: 1px solid rgba(205, 181, 153, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.testimonial-card::before {
+  content: "\"";
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  color: rgba(12, 89, 96, 0.12);
+  font-size: 5.2rem;
+  line-height: 0.7;
+  font-weight: 700;
+}
+
+.testimonial-card::after {
+  content: "";
+  position: absolute;
+  left: 34px;
+  bottom: -14px;
+  width: 28px;
+  height: 28px;
+  background: #fffaf3;
+  border-right: 1px solid rgba(205, 181, 153, 0.9);
+  border-bottom: 1px solid rgba(205, 181, 153, 0.9);
+  transform: rotate(45deg);
+  box-shadow: 14px 14px 28px rgba(26, 18, 12, 0.06);
+}
+
+.testimonial-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #51453f;
+  font-size: 1.06rem;
+}
+
+.testimonial-card span {
+  position: relative;
+  z-index: 1;
+  color: var(--teal);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.social-card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(247, 219, 147, 0.78), transparent 29%),
+    radial-gradient(circle at 86% 8%, rgba(255, 248, 239, 0.92), transparent 31%),
+    radial-gradient(circle at 84% 92%, rgba(238, 132, 118, 0.26), transparent 32%),
+    linear-gradient(135deg, #d9f1ee 0%, #93c8bd 42%, #f2ead8 72%, #cfe6d8 100%);
+  border: 1px solid rgba(255, 248, 239, 0.72);
+  box-shadow: 0 24px 70px rgba(12, 89, 96, 0.18);
+}
+
+.social-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.34), transparent 34%, rgba(255, 248, 239, 0.24) 58%, transparent 78%),
+    radial-gradient(circle at 52% 42%, rgba(255, 255, 255, 0.36), transparent 24%);
+  opacity: 0.88;
+}
+
+.social-button {
+  min-height: 94px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 12px;
+  padding: 18px 12px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  color: #123b3f;
+  background: rgba(255, 255, 255, 0.26);
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.48),
+    0 12px 30px rgba(12, 89, 96, 0.12);
+  backdrop-filter: blur(16px) saturate(1.28);
+  -webkit-backdrop-filter: blur(16px) saturate(1.28);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.social-button:hover,
+.social-button:focus-visible {
+  transform: translateY(-3px);
+  color: var(--ivory);
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(12, 89, 96, 0.62);
+}
+
+.social-button:active {
+  transform: scale(0.96);
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.social-icon path {
+  fill: currentColor;
+}
+
+.social-button:hover .social-icon,
+.social-button:focus-visible .social-icon {
+  animation: social-slide-in 0.3s both;
+}
+
+.social-instagram:hover,
+.social-instagram:focus-visible {
+  background: rgba(214, 41, 118, 0.74);
+}
+
+.social-whatsapp:hover,
+.social-whatsapp:focus-visible {
+  background: rgba(18, 140, 126, 0.72);
+}
+
+.social-email:hover,
+.social-email:focus-visible {
+  background: rgba(198, 95, 84, 0.7);
+}
+
+@keyframes social-slide-in {
+  0% {
+    transform: translateY(-44px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .contact {
   background: var(--contact-bg);
   border-top: 1px solid rgba(12, 89, 96, 0.08);
@@ -1124,8 +1301,18 @@ section[id] {
 
   .service-grid,
   .property-grid,
-  .stat-grid {
+  .stat-grid,
+  .testimonial-grid,
+  .social-card {
     grid-template-columns: 1fr;
+  }
+
+  .social-button {
+    min-height: 76px;
+    grid-template-columns: auto 1fr;
+    justify-content: start;
+    place-items: center start;
+    padding: 16px;
   }
 
   .gallery-strip {
